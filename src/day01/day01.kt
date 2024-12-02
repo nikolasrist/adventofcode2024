@@ -1,7 +1,7 @@
 import java.io.File
 
 fun main() {
-    val (left, right) = parseInputToSortedLists("src/20241201_input")
+    val (left, right) = parseInputToSortedLists("src/day01/20241201_input")
     println("Result Distance: ")
     println(calcDistance(left, right))
 
