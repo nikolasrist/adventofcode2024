@@ -11,7 +11,7 @@ fun main() {
         updates
             .filter { updateLine ->
                 run {
-                    var valid = false
+                    var valid = true
                     updateLine.forEachIndexed { index, value ->
                         run {
                             val applyingRules = rules.filter { it[0] == value }
@@ -20,10 +20,10 @@ fun main() {
                                     val foundIndex = updateLine.indexOf(rule[1])
                                     foundIndex != -1 && foundIndex < index
                                 }
-                            if (violatingRule != null) valid = true
+                            if (violatingRule != null) valid = false
                         }
                     }
-                    valid
+                    !valid
                 }
             }.map { updateLine ->
                 run {
